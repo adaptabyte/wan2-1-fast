@@ -165,13 +165,5 @@ with gr.Blocks() as demo:
     ]
     generate_button.click(fn=generate_video, inputs=ui_inputs, outputs=[video_output, seed_input])
 
-    gr.Examples(
-        examples=[ 
-            ["peng.png", "a penguin playfully dancing in the snow, Antarctica", 896, 512],
-            ["forg.jpg", "the frog jumps around", 448, 832],
-        ],
-        inputs=[input_image_component, prompt_input, height_input, width_input], outputs=[video_output, seed_input], fn=generate_video, cache_examples="lazy"
-    )
-
 if __name__ == "__main__":
     demo.queue().launch()
